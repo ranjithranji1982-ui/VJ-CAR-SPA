@@ -122,3 +122,33 @@ body {
   text-decoration: none;
   color: inherit;
 }
+/* IMAGE ZOOM */
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+}
+
+.img-modal-content {
+  display: block;
+  margin: auto;
+  max-width: 95%;
+  max-height: 90%;
+  margin-top: 10%;
+  border-radius: 12px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #d4af37;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+}
