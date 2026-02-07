@@ -112,3 +112,13 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.back-btn {
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.service-card {
+  text-decoration: none;
+  color: inherit;
+}
