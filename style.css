@@ -152,3 +152,19 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+/* WORK IMAGE NORMAL SIZE */
+.service-grid img {
+  width: 100%;
+  max-width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .service-grid img {
+    height: 180px;
+  }
+}
