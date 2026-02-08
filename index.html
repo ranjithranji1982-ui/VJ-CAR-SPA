@@ -2,52 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>VJ-CAR-SPA | Premium Auto Detailing</title>
+  <title>VJ CAR SPA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* BASIC RESET */
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#000;
+      color:#fff;
+    }
+
+    header{
+      text-align:center;
+      padding:20px 10px;
+    }
+
+    header h1{
+      margin:10px 0 5px;
+      font-size:26px;
+      letter-spacing:2px;
+    }
+
+    header p{
+      margin:0;
+      color:#d4af37;
+      font-size:14px;
+    }
+
+    section{
+      padding:20px;
+    }
+
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+      letter-spacing:1px;
+    }
+
+    /* SERVICE GALLERY */
+    .gallery{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+    }
+
+    .gallery img{
+      width:150px;
+      height:120px;
+      object-fit:cover;
+      border-radius:12px;
+      cursor:pointer;
+      transition:transform 0.3s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.05);
+    }
+
+    /* FULLSCREEN IMAGE VIEWER */
+    .viewer{
+      display:none;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.95);
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+    }
+
+    .viewer img{
+      max-width:95%;
+      max-height:90%;
+      border-radius:12px;
+    }
+
+    .close{
+      position:absolute;
+      top:20px;
+      right:25px;
+      font-size:32px;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    footer{
+      text-align:center;
+      padding:15px;
+      font-size:12px;
+      color:#aaa;
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="header">
-  <img src="logo.png" class="logo" alt="VJ-CAR-SPA Logo">
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>VJ CAR SPA</h1>
+    <p>Luxury Car Detailing & Premium Protection</p>
+  </header>
 
-<section class="hero">
-  <h1>VJ-CAR-SPA</h1>
-  <p>Luxury Car Detailing & Premium Protection</p>
-</section>
+  <!-- SERVICES -->
+  <section>
+    <h2>Our Services</h2>
 
-<section class="services">
-  <h2>Our Services</h2>
+    <div class="gallery">
+      <img src="work/ceramic.jpg" onclick="openImage(this.src)" alt="Ceramic Coating">
+      <img src="work/foam1.jpg" onclick="openImage(this.src)" alt="Foam Wash">
+      <img src="work/foam2.jpg" onclick="openImage(this.src)" alt="Premium Wash">
+      <img src="work/interior.jpg" onclick="openImage(this.src)" alt="Interior Cleaning">
+      <img src="work/tyre-wash.jpg" onclick="openImage(this.src)" alt="Tyre Wash">
+    </div>
+  </section>
 
-  <div class="service-grid">
-
-    <a href="ceramic.html" class="service-card">
-      <img src="ceramic.jpg">
-      <span>Ceramic Coating</span>
-    </a>
-
-    <a href="foam.html" class="service-card">
-      <img src="foam.jpg">
-      <span>Foam Wash</span>
-    </a>
-
-    <a href="interior.html" class="service-card">
-      <img src="interior.jpg">
-      <span>Interior Deep Clean</span>
-    </a>
-
-    <a href="tyre.html" class="service-card">
-      <img src="tyre-wash.jpg">
-      <span>Tyre Wash</span>
-    </a>
-
+  <!-- FULLSCREEN IMAGE VIEW -->
+  <div id="imageViewer" class="viewer">
+    <span class="close" onclick="closeImage()">✕</span>
+    <img id="fullImage">
   </div>
-</section>
 
-<footer class="footer">
-  <p>© 2026 VJ-CAR-SPA. All Rights Reserved.</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 VJ CAR SPA. All Rights Reserved.
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function openImage(src){
+      document.getElementById("imageViewer").style.display = "flex";
+      document.getElementById("fullImage").src = src;
+    }
+
+    function closeImage(){
+      document.getElementById("imageViewer").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
