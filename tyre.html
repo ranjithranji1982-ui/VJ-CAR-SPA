@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tyre Wash | VJ-CAR-SPA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Tyre Wash | VJ-CAR-SPA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,17 +13,26 @@
 </header>
 
 <section class="services">
-  <h2>Tyre Wash – Our Work</h2>
+<h2>Tyre Wash – Our Work</h2>
 
-  <div class="service-grid">
-    <img src="work/tyre-wash.jpg">
-  </div>
+<div class="work-grid">
+  <img src="work/tyre-wash.jpg" onclick="openImg(this)">
+</div>
 </section>
+
+<div id="imgView" class="img-view" onclick="closeImg()">
+  <img id="imgFull">
+</div>
+
+<script>
+function openImg(img){
+  document.getElementById("imgView").style.display="flex";
+  document.getElementById("imgFull").src=img.src;
+}
+function closeImg(){
+  document.getElementById("imgView").style.display="none";
+}
+</script>
 
 </body>
 </html>
-<!-- IMAGE ZOOM MODAL -->
-<div id="imgModal" class="img-modal">
-  <span class="close">&times;</span>
-  <img class="img-modal-content" id="imgModalSrc">
-</div>
