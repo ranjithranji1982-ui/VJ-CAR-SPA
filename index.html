@@ -1,185 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>VJ CAR SPA</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#000;
-  color:#fff;
-}
-
-/* HEADER */
-header{
-  text-align:center;
-  padding:20px;
-}
-header h1{
-  margin:0;
-  letter-spacing:2px;
-}
-header p{
-  color:#d4af37;
-  font-size:14px;
-}
-
-/* SERVICE LIST */
-.services{
-  padding:20px;
-}
-.service{
-  background:#111;
-  margin-bottom:12px;
-  border-radius:10px;
-  overflow:hidden;
-}
-.service-title{
-  padding:15px;
-  font-size:18px;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.service-title span{
-  font-size:20px;
-}
-.gallery{
-  display:none;
-  padding:15px;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.gallery img{
-  width:150px;
-  height:120px;
-  object-fit:cover;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-/* FULL IMAGE VIEW */
-.viewer{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.95);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-.viewer img{
-  max-width:95%;
-  max-height:90%;
-  border-radius:10px;
-}
-.close{
-  position:absolute;
-  top:20px;
-  right:25px;
-  font-size:30px;
-  cursor:pointer;
-}
-
-footer{
-  text-align:center;
-  padding:15px;
-  font-size:12px;
-  color:#aaa;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>VJ-CAR-SPA | Premium Auto Detailing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h1>VJ CAR SPA</h1>
-  <p>Luxury Car Detailing & Premium Protection</p>
+<header class="header">
+  <img src="logo.png" class="logo" alt="VJ-CAR-SPA Logo">
 </header>
 
-<div class="services">
+<section class="hero">
+  <h1>VJ-CAR-SPA</h1>
+  <p>Luxury Car Detailing & Premium Protection</p>
+</section>
 
-  <!-- CERAMIC -->
-  <div class="service">
-    <div class="service-title" onclick="toggleService(this)">
-      Ceramic Coating <span>+</span>
-    </div>
-    <div class="gallery">
-      <img src="work/ceramic.jpg" onclick="openImage(this.src)">
-    </div>
+<section class="services">
+  <h2>Our Services</h2>
+
+  <div class="service-grid">
+
+    <a href="ceramic.html" class="service-card">
+      <img src="ceramic.jpg">
+      <span>Ceramic Coating</span>
+    </a>
+
+    <a href="foam.html" class="service-card">
+      <img src="foam.jpg">
+      <span>Foam Wash</span>
+    </a>
+
+    <a href="interior.html" class="service-card">
+      <img src="interior.jpg">
+      <span>Interior Deep Clean</span>
+    </a>
+
+    <a href="tyre.html" class="service-card">
+      <img src="tyre-wash.jpg">
+      <span>Tyre Wash</span>
+    </a>
+
   </div>
+</section>
 
-  <!-- FOAM WASH -->
-  <div class="service">
-    <div class="service-title" onclick="toggleService(this)">
-      Foam Wash <span>+</span>
-    </div>
-    <div class="gallery">
-      <img src="work/foam1.jpg" onclick="openImage(this.src)">
-      <img src="work/foam2.jpg" onclick="openImage(this.src)">
-    </div>
-  </div>
-
-  <!-- INTERIOR -->
-  <div class="service">
-    <div class="service-title" onclick="toggleService(this)">
-      Interior Cleaning <span>+</span>
-    </div>
-    <div class="gallery">
-      <img src="work/interior.jpg" onclick="openImage(this.src)">
-    </div>
-  </div>
-
-  <!-- TYRE -->
-  <div class="service">
-    <div class="service-title" onclick="toggleService(this)">
-      Tyre Wash <span>+</span>
-    </div>
-    <div class="gallery">
-      <img src="work/tyre-wash.jpg" onclick="openImage(this.src)">
-    </div>
-  </div>
-
-</div>
-
-<!-- IMAGE VIEWER -->
-<div class="viewer" id="imageViewer">
-  <span class="close" onclick="closeImage()">✕</span>
-  <img id="fullImage">
-</div>
-
-<footer>
-© 2026 VJ CAR SPA
+<footer class="footer">
+  <p>© 2026 VJ-CAR-SPA. All Rights Reserved.</p>
 </footer>
-
-<script>
-function toggleService(title){
-  const gallery = title.nextElementSibling;
-  const icon = title.querySelector("span");
-
-  if(gallery.style.display === "flex"){
-    gallery.style.display = "none";
-    icon.textContent = "+";
-  }else{
-    gallery.style.display = "flex";
-    icon.textContent = "−";
-  }
-}
-
-function openImage(src){
-  document.getElementById("imageViewer").style.display = "flex";
-  document.getElementById("fullImage").src = src;
-}
-
-function closeImage(){
-  document.getElementById("imageViewer").style.display = "none";
-}
-</script>
 
 </body>
 </html>
