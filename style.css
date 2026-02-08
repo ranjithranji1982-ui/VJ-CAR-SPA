@@ -42,7 +42,7 @@ body {
   color: #d4af37;
 }
 
-/* SECTIONS */
+/* SERVICES SECTION */
 .services {
   max-width: 1200px;
   margin: auto;
@@ -56,7 +56,7 @@ body {
   letter-spacing: 2px;
 }
 
-/* SERVICE CARDS */
+/* SERVICE GRID */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -75,7 +75,7 @@ body {
 
 .service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.25);
 }
 
 .service-card img {
@@ -92,49 +92,27 @@ body {
   color: #d4af37;
 }
 
-/* WORK IMAGES GRID */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+/* REVIEW BUTTON */
+.review-section {
+  text-align: center;
+  margin: 40px 0;
 }
 
-.work-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 14px;
-  cursor: pointer;
+.review-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(212,175,55,0.35);
   transition: transform 0.2s ease;
 }
 
-.work-grid img:hover {
-  transform: scale(1.02);
-}
-
-/* FULL SCREEN IMAGE VIEW */
-.img-view {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#imgFull {
-  max-width: 95%;
-  max-height: 90%;
-  border-radius: 14px;
-}
-
-/* BACK BUTTON */
-.back-btn {
-  color: #d4af37;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px 20px;
+.review-btn:hover {
+  transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -154,9 +132,5 @@ body {
 
   .service-card img {
     height: 170px;
-  }
-
-  .work-grid img {
-    height: 150px;
   }
 }
