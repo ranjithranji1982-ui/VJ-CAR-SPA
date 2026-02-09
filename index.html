@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VJ-CAR-SPA | Premium Auto Detailing</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>VJ CAR SPA | Premium Auto Detailing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="header">
-  <img src="logo.png" class="logo">
-</header>
-
+<!-- HERO SECTION WITH VIDEO -->
 <section class="hero">
-  <h1>VJ-CAR-SPA</h1>
-  <p>Luxury Car Detailing & Premium Protection</p>
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay">
+    <h1>VJ CAR SPA</h1>
+    <p>Luxury Car Detailing & Premium Protection</p>
+    <a href="gallery.html" class="hero-btn">View Gallery</a>
+  </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services">
   <h2>Our Services</h2>
-
   <div class="service-grid">
+
     <a href="ceramic.html" class="service-card">
       <img src="ceramic.jpg">
       <span>Ceramic Coating</span>
@@ -40,28 +45,32 @@
       <img src="tyre-wash.jpg">
       <span>Tyre Wash</span>
     </a>
+
   </div>
 </section>
 
-<section class="action-buttons">
-  <a href="tel:+919655065150" class="action-btn call-btn">📞 Call Now</a>
-  <a href="https://wa.me/919655065150?text=Hello%20VJ%20CAR%20SPA%20I%20need%20to%20book%20a%20slot" target="_blank" class="action-btn whatsapp-btn">💬 WhatsApp</a>
-  <a href="https://maps.app.goo.gl/iW35wrUa6pD2iA2s8?g_st=aw" target="_blank" class="action-btn map-btn">📍 View Location</a>
-  <a href="https://forms.gle/kCsebx77f4hHoCwc6" target="_blank" class="action-btn book-btn">📝 Book Slot</a>
-</section>
+<!-- FLOATING ACTION BUTTONS -->
+<div class="floating-buttons">
 
-<div style="text-align:center;">
-  <a href="gallery.html" class="luxury-gallery-btn">View Gallery</a>
+  <a href="tel:+919655065150" class="float-btn call">📞</a>
+
+  <a href="https://wa.me/919655065150?text=Hello%20VJ%20CAR%20SPA%20I%20need%20to%20book%20a%20slot"
+     target="_blank"
+     class="float-btn whatsapp">💬</a>
+
+  <a href="https://maps.app.goo.gl/iW35wrUa6pD2iA2s8?g_st=aw"
+     target="_blank"
+     class="float-btn maps">📍</a>
+
+  <a href="https://forms.gle/kCsebx77f4hHoCwc6"
+     target="_blank"
+     class="float-btn book">📝</a>
+
 </div>
 
-<div class="review-section">
-  <a href="https://share.google/9Zodcsf0uvi9lQAMP" target="_blank" class="review-btn">
-    ⭐ Leave a Review
-  </a>
-</div>
-
+<!-- FOOTER -->
 <footer class="footer">
-  © 2026 VJ-CAR-SPA. All Rights Reserved.
+  © 2026 VJ CAR SPA. All Rights Reserved.
 </footer>
 
 </body>
