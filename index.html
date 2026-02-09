@@ -53,7 +53,6 @@
   <h2>Our Premium Works</h2>
 
   <div class="gallery-container">
-    <!-- 20 Images -->
     <img src="image1.png" onclick="openLightbox(this.src)">
     <img src="image2.png" onclick="openLightbox(this.src)">
     <img src="image3.png" onclick="openLightbox(this.src)">
@@ -77,6 +76,33 @@
   </div>
 </section>
 
+<!-- ACTION BUTTONS -->
+<section class="action-buttons">
+
+  <a href="tel:+919655065150" class="action-btn call-btn">
+    📞 Call Now
+  </a>
+
+  <a href="https://wa.me/919655065150?text=Hello%20VJ%20CAR%20SPA%20I%20need%20to%20book%20a%20slot"
+     target="_blank"
+     class="action-btn whatsapp-btn">
+    💬 WhatsApp
+  </a>
+
+  <a href="https://maps.app.goo.gl/iW35wrUa6pD2iA2s8?g_st=aw"
+     target="_blank"
+     class="action-btn map-btn">
+    📍 View Location
+  </a>
+
+  <a href="https://forms.gle/kCsebx77f4hHoCwc6"
+     target="_blank"
+     class="action-btn book-btn">
+    📝 Book Slot
+  </a>
+
+</section>
+
 <!-- REVIEW BUTTON -->
 <div class="review-section">
   <a href="https://share.google/9Zodcsf0uvi9lQAMP"
@@ -97,7 +123,16 @@
   <img id="lightbox-img">
 </div>
 
-<script src="script.js"></script>
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "block";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
