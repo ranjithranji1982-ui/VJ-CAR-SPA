@@ -73,34 +73,11 @@
     📝 Book Slot
   </a>
 
-</section>
+  <!-- VIEW GALLERY BUTTON -->
+  <a href="gallery.html" class="action-btn gallery-btn">
+    🖼 View Gallery
+  </a>
 
-<!-- GALLERY -->
-<section class="gallery-section">
-  <h2>Our Premium Works</h2>
-
-  <div class="gallery-container">
-    <img src="gallery/image1.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image2.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image3.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image4.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image5.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image6.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image7.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image8.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image9.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image10.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image11.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image12.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image13.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image14.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image15.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image16.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image17.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image18.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image19.png" onclick="openLightbox(this.src)">
-    <img src="gallery/image20.png" onclick="openLightbox(this.src)">
-  </div>
 </section>
 
 <!-- REVIEW -->
@@ -116,23 +93,6 @@
 <footer class="footer">
   © 2026 VJ-CAR-SPA. All Rights Reserved.
 </footer>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <span class="close-btn">&times;</span>
-  <img id="lightbox-img">
-</div>
-
-<script>
-function openLightbox(src) {
-  document.getElementById("lightbox").style.display = "block";
-  document.getElementById("lightbox-img").src = src;
-}
-
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-}
-</script>
 
 </body>
 </html>
