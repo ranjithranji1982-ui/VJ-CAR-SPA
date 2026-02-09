@@ -1,133 +1,152 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* BODY */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #0e0e0e;
-    color: #ffffff;
+body{
+  background:black;
+  color:white;
 }
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #000000, #1a1a1a);
-    text-align: center;
-    padding: 40px 20px;
-    animation: fadeDown 1s ease;
+/* HERO VIDEO */
+.hero{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
 }
 
-.logo {
-    width: 90px;
-    margin-bottom: 10px;
+.hero-video{
+  position:absolute;
+  top:50%;
+  left:50%;
+  min-width:100%;
+  min-height:100%;
+  transform:translate(-50%,-50%);
+  object-fit:cover;
+  z-index:0;
 }
 
-header h1 {
-    font-size: 32px;
-    letter-spacing: 2px;
+/* Dark overlay */
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.65);
+  top:0;
+  left:0;
+  z-index:1;
 }
 
-header p {
-    color: #c9a24d;
-    font-size: 14px;
-    margin-top: 5px;
+.hero-overlay{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.hero-overlay h1{
+  font-size:42px;
+  color:gold;
+  letter-spacing:3px;
+}
+
+.hero-overlay p{
+  margin:15px 0;
+  color:#ccc;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding:12px 25px;
+  border:2px solid gold;
+  color:gold;
+  text-decoration:none;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+.hero-btn:hover{
+  background:gold;
+  color:black;
 }
 
 /* SERVICES */
-.services {
-    padding: 40px 15px;
+.services{
+  padding:60px 20px;
+  text-align:center;
 }
 
-.services h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #c9a24d;
-    letter-spacing: 1px;
+.services h2{
+  color:gold;
+  margin-bottom:30px;
 }
 
-/* GRID */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:20px;
 }
 
-/* SERVICE BOX */
-.box {
-    background: #151515;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    transform: translateY(30px);
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
+.service-card{
+  background:#111;
+  padding:10px;
+  border-radius:15px;
+  text-decoration:none;
+  color:gold;
+  transition:0.3s;
 }
 
-.box:nth-child(1) { animation-delay: 0.1s; }
-.box:nth-child(2) { animation-delay: 0.2s; }
-.box:nth-child(3) { animation-delay: 0.3s; }
-.box:nth-child(4) { animation-delay: 0.4s; }
-.box:nth-child(5) { animation-delay: 0.5s; }
-.box:nth-child(6) { animation-delay: 0.6s; }
-
-.box img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
+.service-card img{
+  width:100%;
+  border-radius:10px;
 }
 
-.box p {
-    padding: 12px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 14px;
+.service-card:hover{
+  transform:scale(1.05);
 }
 
-/* HOVER EFFECT */
-.box:hover {
-    transform: scale(1.05);
-    transition: 0.4s ease;
-    box-shadow: 0 12px 35px rgba(201,162,77,0.3);
+/* FLOATING BUTTONS */
+.floating-buttons{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:999;
 }
+
+.float-btn{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  text-decoration:none;
+  color:white;
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+  transition:0.3s;
+}
+
+.float-btn:hover{
+  transform:scale(1.1);
+}
+
+.call{ background:#007bff; }
+.whatsapp{ background:#25D366; }
+.maps{ background:#ff9800; }
+.book{ background:gold; color:black; }
 
 /* FOOTER */
-footer {
-    background: #000;
-    color: #888;
-    text-align: center;
-    padding: 15px;
-    font-size: 12px;
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeDown {
-    from {
-        transform: translateY(-30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* RESPONSIVE */
-@media (min-width: 768px) {
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.footer{
+  text-align:center;
+  padding:20px;
+  background:#111;
+  color:#777;
 }
