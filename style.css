@@ -338,3 +338,146 @@ body {
   max-width: 90%;
   max-height: 85%;
 }
+body {
+  margin:0;
+  font-family:Arial;
+  background:#000;
+  color:white;
+}
+
+.header {
+  text-align:center;
+  padding:20px;
+}
+
+.logo {
+  height:60px;
+}
+
+.hero {
+  text-align:center;
+  padding:50px 20px;
+}
+
+.hero h1 {
+  color:gold;
+}
+
+.services h2,
+.gallery-section h2 {
+  text-align:center;
+  color:gold;
+}
+
+.service-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.service-card {
+  text-decoration:none;
+  color:gold;
+  background:#111;
+  border-radius:15px;
+  overflow:hidden;
+  text-align:center;
+  transition:0.3s;
+}
+
+.service-card img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.service-card:hover {
+  transform:scale(1.05);
+}
+
+.action-buttons {
+  text-align:center;
+  padding:30px;
+}
+
+.action-btn {
+  display:block;
+  width:80%;
+  max-width:300px;
+  margin:15px auto;
+  padding:15px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  color:white;
+}
+
+.call-btn { background:#007bff; }
+.whatsapp-btn { background:#25D366; }
+.map-btn { background:#ff9800; }
+.book-btn { background:gold; color:black; }
+
+.luxury-gallery-btn {
+  display:inline-block;
+  padding:15px 40px;
+  margin:20px;
+  color:gold;
+  border:2px solid gold;
+  border-radius:50px;
+  text-decoration:none;
+  transition:0.4s;
+}
+
+.luxury-gallery-btn:hover {
+  background:gold;
+  color:black;
+  box-shadow:0 0 20px gold;
+}
+
+.gallery-container {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  padding:20px;
+}
+
+.gallery-container img {
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.lightbox {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  text-align:center;
+  padding-top:60px;
+}
+
+.lightbox img {
+  max-width:90%;
+  max-height:85%;
+}
+
+.footer {
+  text-align:center;
+  padding:20px;
+  background:#111;
+}
+
+.review-btn {
+  display:inline-block;
+  padding:15px 30px;
+  border:2px solid gold;
+  border-radius:40px;
+  color:gold;
+  text-decoration:none;
+}
