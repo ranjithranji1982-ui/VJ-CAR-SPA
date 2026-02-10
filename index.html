@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* ===== SPLASH SCREEN ===== */
+/* ===== INTRO SPLASH ===== */
 #intro {
     position: fixed;
     inset: 0;
@@ -27,7 +27,8 @@
 #intro video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Perfect mobile fit */
+    background: #000;
 }
 
 .fade-out {
@@ -47,7 +48,7 @@
     </video>
 </div>
 
-<!-- MAIN WEBSITE CONTENT -->
+<!-- MAIN CONTENT -->
 <div id="main-content" style="display:none;">
 
 <header class="header">
@@ -140,12 +141,11 @@ We ensure top quality detailing with professional care and advanced protection.
 </div>
 
 <script>
-// After 5 seconds hide intro
 window.addEventListener("load", function(){
     setTimeout(function(){
         document.getElementById("intro").classList.add("fade-out");
         document.getElementById("main-content").style.display = "block";
-    }, 5000);
+    }, 5000); // 5 seconds intro
 });
 </script>
 
