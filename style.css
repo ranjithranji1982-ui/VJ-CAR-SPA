@@ -222,3 +222,21 @@ color:#888;
 grid-template-columns:repeat(3,1fr);
 }
 }
+/* ===== FIX GALLERY IMAGE ZOOM ===== */
+
+.gallery-grid img {
+    width: 100% !important;
+    height: 160px !important;
+    object-fit: cover !important;
+    border-radius: 16px;
+}
+
+/* Make sure no full height stretch */
+.gallery-grid {
+    align-items: start;
+}
+
+/* Remove accidental full height images */
+.gallery-section img {
+    max-height: 200px;
+}
