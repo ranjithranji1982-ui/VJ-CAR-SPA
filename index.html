@@ -12,30 +12,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-#intro {
-    position: fixed;
-    inset: 0;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-    transition: opacity 1s ease;
+#intro{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:opacity 1s ease;
 }
-#intro video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+#intro video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
-.fade-out {
-    opacity: 0;
-    pointer-events: none;
+.fade-out{
+    opacity:0;
+    pointer-events:none;
 }
 </style>
 </head>
 
 <body>
 
+<!-- INTRO -->
 <div id="intro">
     <video autoplay muted playsinline>
         <source src="logo_intro.mp4" type="video/mp4">
@@ -53,7 +54,7 @@
     <p>Luxury Car Wash & Ceramic Coating in Trichy</p>
 </section>
 
-<section style="padding:20px; text-align:center;">
+<section class="about-section">
 <h2>Best Car Wash & Car Detailing in Trichy</h2>
 <p>
 VJ CAR SPA provides premium car wash, ceramic coating, foam wash and interior deep cleaning services in Trichy.
@@ -66,42 +67,42 @@ We ensure top quality detailing with professional care and advanced protection.
 
 <div class="service-grid">
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="engine_bay.png">
 <span>Engine Bay Cleaning</span>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="foam_wash.png">
 <span>Foam Wash</span>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="glass_polish.png">
 <span>Glass Polish</span>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="headlight.png">
 <span>Headlight Restoration</span>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="interior.jpg">
 <span>Interior Deep Cleaning</span>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="rain.png">
 <span>Rain Protection Coating</span>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="Teflon.png">
 <span>Teflon Coating</span>
 </div>
 
-<div class="service-card glass">
+<div class="service-card">
 <img src="tyre-shine.png">
 <span>Tyre Shine</span>
 </div>
@@ -109,24 +110,22 @@ We ensure top quality detailing with professional care and advanced protection.
 </div>
 </section>
 
-<!-- LUXURY GALLERY SECTION -->
+<!-- PREMIUM GALLERY -->
 <section class="luxury-gallery">
-
 <h2><i class="fas fa-crown"></i> Premium Gallery</h2>
 
-<a href="gallery.html" class="luxury-gallery-box">
+<a href="gallery.html" class="luxury-box">
     <img src="gallery/image1.png">
     <div class="luxury-overlay">
         <i class="fas fa-images"></i>
         <span>Explore Our Works</span>
     </div>
 </a>
-
 </section>
 
-<div style="text-align:center;">
+<div class="review-wrapper">
 <a href="https://share.google/9Zodcsf0uvi9lQAMP" target="_blank" class="review-btn">
-⭐ Leave a Review
+<i class="fas fa-star"></i> Leave a Review
 </a>
 </div>
 
@@ -144,11 +143,11 @@ We ensure top quality detailing with professional care and advanced protection.
 </div>
 
 <script>
-window.addEventListener("load", function(){
-    setTimeout(function(){
-        document.getElementById("intro").classList.add("fade-out");
-        document.getElementById("main-content").style.display = "block";
-    }, 5000);
+window.addEventListener("load",function(){
+setTimeout(function(){
+document.getElementById("intro").classList.add("fade-out");
+document.getElementById("main-content").style.display="block";
+},5000);
 });
 </script>
 
