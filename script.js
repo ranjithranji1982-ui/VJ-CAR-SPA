@@ -1,16 +1,14 @@
-function openImage(src){
-  document.getElementById("imageViewer").style.display = "flex";
-  document.getElementById("fullImage").src = src;
-}
-
-function closeImage(){
-  document.getElementById("imageViewer").style.display = "none";
-}
 function openLightbox(src) {
-  document.getElementById("lightbox").style.display = "block";
-  document.getElementById("lightbox-img").src = src;
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    img.src = src;
+    lightbox.style.display = "flex";
+
+    document.body.style.overflow = "hidden"; // stop background scroll
 }
 
 function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
+    document.getElementById("lightbox").style.display = "none";
+    document.body.style.overflow = "auto";
 }
