@@ -4,11 +4,29 @@ function openLightbox(src) {
 
     img.src = src;
     lightbox.style.display = "flex";
+    document.body.style.overflow = "hidden";
 
-    document.body.style.overflow = "hidden"; // stop background scroll
+    // Add history entry
+    history.pushState({ lightboxOpen: true }, "");
 }
 
 function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
+    const lightbox = document.getElementById("lightbox");
+
+    lightbox.style.display = "none";
     document.body.style.overflow = "auto";
 }
+
+// Back button handling
+window.addEventListener("popstate", function (event) {
+    const lightbox = document.getElementById("lightbox");
+
+    if (lightbox.style.display === "flex") {
+        // Just close popup, don't go to homepage
+        lightbox.style.display = "none";
+        document.body.style.overflow = "auto";
+
+        // Prevent further back navigation
+        history.pushState(null, "");
+    }
+});
