@@ -13,7 +13,6 @@
     <h1>Our Works</h1>
 
     <div class="gallery-grid">
-
         <img src="gallery/image1.png" onclick="openLightbox(this.src)">
         <img src="gallery/image2.png" onclick="openLightbox(this.src)">
         <img src="gallery/image3.png" onclick="openLightbox(this.src)">
@@ -34,7 +33,6 @@
         <img src="gallery/image18.png" onclick="openLightbox(this.src)">
         <img src="gallery/image19.png" onclick="openLightbox(this.src)">
         <img src="gallery/image20.png" onclick="openLightbox(this.src)">
-
     </div>
 </section>
 
@@ -47,11 +45,19 @@
 function openLightbox(src) {
     document.getElementById("lightbox").style.display = "flex";
     document.getElementById("lightbox-img").src = src;
+
+    // Push history state
+    history.pushState({ lightbox: true }, "");
 }
 
 function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
+
+// Back button = close popup
+window.addEventListener("popstate", function () {
+    closeLightbox();
+});
 </script>
 
 </body>
