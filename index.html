@@ -8,22 +8,47 @@
 
 <meta name="description" content="VJ CAR SPA in Trichy offers premium car wash, ceramic coating, interior deep cleaning and complete car detailing services. Book your slot today.">
 
-<meta name="keywords" content="Car wash in Trichy, Car detailing Trichy, Ceramic coating Trichy, Foam wash Trichy, Interior cleaning Trichy, Best car spa in Trichy">
-
-<meta name="author" content="VJ CAR SPA">
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="VJ CAR SPA - Premium Car Detailing in Trichy">
-<meta property="og:description" content="Luxury car wash and ceramic coating services in Trichy.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ranjithranji1982-ui.github.io/VJ-CAR-SPA/">
-<meta property="og:image" content="https://ranjithranji1982-ui.github.io/VJ-CAR-SPA/logo.png">
-
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ===== SPLASH SCREEN ===== */
+#intro {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 1s ease;
+}
+
+#intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+</style>
+
 </head>
 
 <body>
+
+<!-- INTRO VIDEO -->
+<div id="intro">
+    <video autoplay muted playsinline>
+        <source src="logo_intro.mp4" type="video/mp4">
+    </video>
+</div>
+
+<!-- MAIN WEBSITE CONTENT -->
+<div id="main-content" style="display:none;">
 
 <header class="header">
     <img src="logo.png" class="logo" alt="VJ CAR SPA Logo - Car Wash in Trichy">
@@ -53,12 +78,12 @@ We ensure top quality detailing with professional care and advanced protection.
 </div>
 
 <div class="service-card glass">
-<img src="foam_wash.png" alt="Foam Car Wash in Trichy">
+<img src="foam_wash.png" alt="Foam Wash in Trichy">
 <span>Foam Wash</span>
 </div>
 
 <div class="service-card glass">
-<img src="glass_polish.png" alt="Car Glass Polish Service in Trichy">
+<img src="glass_polish.png" alt="Glass Polish in Trichy">
 <span>Glass Polish</span>
 </div>
 
@@ -78,32 +103,17 @@ We ensure top quality detailing with professional care and advanced protection.
 </div>
 
 <div class="service-card glass">
-<img src="Teflon.png" alt="Teflon Coating Service in Trichy">
+<img src="Teflon.png" alt="Teflon Coating in Trichy">
 <span>Teflon Coating</span>
 </div>
 
 <div class="service-card glass">
-<img src="tyre-shine.png" alt="Tyre Shine Service in Trichy">
+<img src="tyre-shine.png" alt="Tyre Shine in Trichy">
 <span>Tyre Shine</span>
 </div>
 
-<div class="service-card glass">
-<img src="under_chase.png" alt="Underbody Cleaning in Trichy">
-<span>Underbody Cleaning</span>
-</div>
-
-<div class="service-card glass">
-<img src="vaccum.png" alt="Car Vacuum Cleaning in Trichy">
-<span>Vacuum Cleaning</span>
-</div>
-
-<div class="service-card glass">
-<img src="wax.png" alt="Car Wax Polish in Trichy">
-<span>Wax Polish</span>
-</div>
-
 <a href="gallery.html" class="service-card glass">
-<img src="gallery/image1.png" alt="Car detailing work in Trichy">
+<img src="gallery/image1.png" alt="Car detailing gallery in Trichy">
 <span>Gallery</span>
 </a>
 
@@ -127,7 +137,17 @@ We ensure top quality detailing with professional care and advanced protection.
 © 2026 VJ CAR SPA. All Rights Reserved.
 </footer>
 
-<script src="script.js"></script>
+</div>
+
+<script>
+// After 5 seconds hide intro
+window.addEventListener("load", function(){
+    setTimeout(function(){
+        document.getElementById("intro").classList.add("fade-out");
+        document.getElementById("main-content").style.display = "block";
+    }, 5000);
+});
+</script>
 
 </body>
 </html>
