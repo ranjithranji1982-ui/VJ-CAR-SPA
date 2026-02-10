@@ -1,3 +1,5 @@
+let popupOpen = false;
+
 function openLightbox(src) {
     const lightbox = document.getElementById("lightbox");
     const img = document.getElementById("lightbox-img");
@@ -6,8 +8,10 @@ function openLightbox(src) {
     lightbox.style.display = "flex";
     document.body.style.overflow = "hidden";
 
-    // Add history entry
-    history.pushState({ lightboxOpen: true }, "");
+    popupOpen = true;
+
+    // Add one history state
+    history.pushState({ popup: true }, "");
 }
 
 function closeLightbox() {
@@ -15,18 +19,13 @@ function closeLightbox() {
 
     lightbox.style.display = "none";
     document.body.style.overflow = "auto";
+
+    popupOpen = false;
 }
 
-// Back button handling
+// Back button logic
 window.addEventListener("popstate", function (event) {
-    const lightbox = document.getElementById("lightbox");
-
-    if (lightbox.style.display === "flex") {
-        // Just close popup, don't go to homepage
-        lightbox.style.display = "none";
-        document.body.style.overflow = "auto";
-
-        // Prevent further back navigation
-        history.pushState(null, "");
+    if (popupOpen) {
+        closeLightbox();
     }
 });
