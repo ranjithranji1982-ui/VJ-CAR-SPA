@@ -8,12 +8,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #000000, #0d0d0d);
     color: #fff;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 /* =========================
@@ -23,7 +26,6 @@ body {
 .glass {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
@@ -40,7 +42,6 @@ body {
 .logo {
     width: 110px;
     height: auto;
-    filter: drop-shadow(0 0 10px rgba(212,175,55,0.6));
 }
 
 /* =========================
@@ -54,7 +55,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: 2px;
 }
 
@@ -76,13 +77,12 @@ body {
     text-align: center;
     margin-bottom: 25px;
     font-size: 24px;
-    animation: fadeUp 1s ease forwards;
 }
 
 .service-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 15px;
 }
 
 .service-card {
@@ -92,7 +92,8 @@ body {
     text-decoration: none;
     color: #d4af37;
     transition: 0.4s ease;
-    animation: fadeUp 1s ease forwards;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
 }
 
 .service-card img {
@@ -108,73 +109,45 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 40px rgba(212,175,55,0.4);
-}
-
-/* Apply Glass Effect */
-.service-card {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
+    transform: translateY(-6px) scale(1.03);
 }
 
 /* =========================
-   REVIEW BUTTON
-========================= */
-
-.review-btn {
-    display: inline-block;
-    margin: 40px auto;
-    padding: 14px 30px;
-    border-radius: 30px;
-    color: #d4af37;
-    border: 2px solid #d4af37;
-    text-decoration: none;
-    transition: 0.4s ease;
-}
-
-.review-btn:hover {
-    background: #d4af37;
-    color: #000;
-    box-shadow: 0 0 20px #d4af37;
-}
-
-/* =========================
-   GALLERY
+   GALLERY (FIXED VERSION)
 ========================= */
 
 .gallery-section {
     padding: 30px 15px;
 }
 
-.gallery-section h2 {
+.gallery-section h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
 }
 
-.gallery {
+/* CORRECT CLASS */
+.gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Mobile perfect */
     gap: 12px;
 }
 
-.gallery img {
+.gallery-grid img {
     width: 100%;
-    height: 110px;
+    height: 150px;
     object-fit: cover;
     border-radius: 16px;
     cursor: pointer;
-    transition: 0.4s ease;
+    transition: 0.3s ease;
 }
 
-.gallery img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(212,175,55,0.5);
+.gallery-grid img:hover {
+    transform: scale(1.05);
 }
 
 /* =========================
-   LIGHTBOX POPUP
+   LIGHTBOX
 ========================= */
 
 .lightbox {
@@ -184,27 +157,14 @@ body {
     z-index: 9999;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(6px);
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.85);
 }
 
 .lightbox img {
     max-width: 90%;
     max-height: 85%;
     object-fit: contain;
-    border-radius: 20px;
-    animation: popupZoom 0.4s ease;
-}
-
-@keyframes popupZoom {
-    from {
-        transform: scale(0.85);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+    border-radius: 18px;
 }
 
 /* =========================
@@ -231,12 +191,11 @@ body {
     text-decoration: none;
     font-size: 22px;
     color: white;
-    transition: 0.4s ease;
-    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
 }
 
 .float-btn:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
 }
 
 .call { background: rgba(80,80,80,0.6); }
@@ -256,13 +215,13 @@ footer {
 }
 
 /* =========================
-   SCROLL ANIMATION
+   ANIMATION
 ========================= */
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
