@@ -3,36 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | VJ CAR SPA</title>
+
+<title>Gallery | Car Detailing Works in Trichy - VJ CAR SPA</title>
+
+<meta name="description" content="View our premium car wash, ceramic coating and car detailing works in Trichy. VJ CAR SPA provides top quality detailing services.">
+
+<meta name="keywords" content="Car wash gallery Trichy, Car detailing images Trichy, Ceramic coating works Trichy">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <section class="gallery-section">
-    <h1>Our Works</h1>
+    <h1>Our Car Detailing Works in Trichy</h1>
 
     <div class="gallery-grid">
-        <img src="gallery/image1.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image2.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image3.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image4.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image5.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image6.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image7.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image8.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image9.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image10.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image11.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image12.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image13.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image14.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image15.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image16.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image17.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image18.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image19.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image20.png" onclick="openLightbox(this.src)">
+
+        <img src="gallery/image1.png" alt="Car wash service in Trichy - VJ CAR SPA" onclick="openLightbox(this.src)">
+        <img src="gallery/image2.png" alt="Foam wash detailing in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image3.png" alt="Ceramic coating finish in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image4.png" alt="Interior deep cleaning service in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image5.png" alt="Premium car detailing in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image6.png" alt="Car polishing service in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image7.png" alt="Luxury car wash in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image8.png" alt="Car paint protection service in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image9.png" alt="Professional car spa in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image10.png" alt="Complete car cleaning in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image11.png" alt="Ceramic coating shine in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image12.png" alt="Car exterior detailing in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image13.png" alt="Car interior detailing in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image14.png" alt="Advanced foam wash in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image15.png" alt="Premium car wash results in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image16.png" alt="Car polishing and waxing in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image17.png" alt="Best car spa in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image18.png" alt="High quality detailing service in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image19.png" alt="Car cleaning experts in Trichy" onclick="openLightbox(this.src)">
+        <img src="gallery/image20.png" alt="VJ CAR SPA detailing works in Trichy" onclick="openLightbox(this.src)">
+
     </div>
 </section>
 
@@ -41,24 +49,7 @@
     <img id="lightbox-img">
 </div>
 
-<script>
-function openLightbox(src) {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = src;
-
-    // Push history state
-    history.pushState({ lightbox: true }, "");
-}
-
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
-
-// Back button = close popup
-window.addEventListener("popstate", function () {
-    closeLightbox();
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
