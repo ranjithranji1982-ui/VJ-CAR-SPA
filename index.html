@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* ===== INTRO SPLASH ===== */
 #intro {
     position: fixed;
     inset: 0;
@@ -23,36 +22,30 @@
     z-index: 99999;
     transition: opacity 1s ease;
 }
-
 #intro video {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Perfect mobile fit */
-    background: #000;
+    object-fit: contain;
 }
-
 .fade-out {
     opacity: 0;
     pointer-events: none;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- INTRO VIDEO -->
 <div id="intro">
     <video autoplay muted playsinline>
         <source src="logo_intro.mp4" type="video/mp4">
     </video>
 </div>
 
-<!-- MAIN CONTENT -->
 <div id="main-content" style="display:none;">
 
 <header class="header">
-    <img src="logo.png" class="logo" alt="VJ CAR SPA Logo - Car Wash in Trichy">
+    <img src="logo.png" class="logo" alt="VJ CAR SPA Logo">
 </header>
 
 <section class="hero">
@@ -74,51 +67,61 @@ We ensure top quality detailing with professional care and advanced protection.
 <div class="service-grid">
 
 <div class="service-card glass">
-<img src="engine_bay.png" alt="Engine Bay Cleaning in Trichy">
+<img src="engine_bay.png">
 <span>Engine Bay Cleaning</span>
 </div>
 
 <div class="service-card glass">
-<img src="foam_wash.png" alt="Foam Wash in Trichy">
+<img src="foam_wash.png">
 <span>Foam Wash</span>
 </div>
 
 <div class="service-card glass">
-<img src="glass_polish.png" alt="Glass Polish in Trichy">
+<img src="glass_polish.png">
 <span>Glass Polish</span>
 </div>
 
 <div class="service-card glass">
-<img src="headlight.png" alt="Headlight Restoration in Trichy">
+<img src="headlight.png">
 <span>Headlight Restoration</span>
 </div>
 
 <div class="service-card glass">
-<img src="interior.jpg" alt="Interior Deep Cleaning in Trichy">
+<img src="interior.jpg">
 <span>Interior Deep Cleaning</span>
 </div>
 
 <div class="service-card glass">
-<img src="rain.png" alt="Rain Protection Coating in Trichy">
+<img src="rain.png">
 <span>Rain Protection Coating</span>
 </div>
 
 <div class="service-card glass">
-<img src="Teflon.png" alt="Teflon Coating in Trichy">
+<img src="Teflon.png">
 <span>Teflon Coating</span>
 </div>
 
 <div class="service-card glass">
-<img src="tyre-shine.png" alt="Tyre Shine in Trichy">
+<img src="tyre-shine.png">
 <span>Tyre Shine</span>
 </div>
 
-<a href="gallery.html" class="service-card glass">
-<img src="gallery/image1.png" alt="Car detailing gallery in Trichy">
-<span>Gallery</span>
+</div>
+</section>
+
+<!-- LUXURY GALLERY SECTION -->
+<section class="luxury-gallery">
+
+<h2><i class="fas fa-crown"></i> Premium Gallery</h2>
+
+<a href="gallery.html" class="luxury-gallery-box">
+    <img src="gallery/image1.png">
+    <div class="luxury-overlay">
+        <i class="fas fa-images"></i>
+        <span>Explore Our Works</span>
+    </div>
 </a>
 
-</div>
 </section>
 
 <div style="text-align:center;">
@@ -145,7 +148,7 @@ window.addEventListener("load", function(){
     setTimeout(function(){
         document.getElementById("intro").classList.add("fade-out");
         document.getElementById("main-content").style.display = "block";
-    }, 5000); // 5 seconds intro
+    }, 5000);
 });
 </script>
 
