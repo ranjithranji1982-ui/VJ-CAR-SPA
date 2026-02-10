@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | VJ-CAR-SPA</title>
+<title>Gallery | VJ CAR SPA</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <section class="gallery-section">
@@ -13,7 +14,6 @@
 
     <div class="gallery-grid">
 
-        <!-- IMAGE 1 -->
         <img src="gallery/image1.png" onclick="openLightbox(this.src)">
         <img src="gallery/image2.png" onclick="openLightbox(this.src)">
         <img src="gallery/image3.png" onclick="openLightbox(this.src)">
@@ -43,6 +43,16 @@
     <img id="lightbox-img">
 </div>
 
-<script src="script.js"></script>
+<script>
+function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
 </body>
 </html>
