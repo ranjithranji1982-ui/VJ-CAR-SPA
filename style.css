@@ -51,7 +51,6 @@ body {
 .hero {
     text-align: center;
     padding: 40px 15px;
-    animation: fadeUp 1s ease forwards;
 }
 
 .hero h1 {
@@ -110,10 +109,33 @@ body {
 
 .service-card:hover {
     transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 25px rgba(212,175,55,0.4);
 }
 
 /* =========================
-   GALLERY (FIXED VERSION)
+   REVIEW BUTTON (PREMIUM)
+========================= */
+
+.review-btn {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #d4af37, #f1c40f);
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(212,175,55,0.6);
+    transition: 0.3s ease;
+}
+
+.review-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(212,175,55,0.9);
+}
+
+/* =========================
+   GALLERY
 ========================= */
 
 .gallery-section {
@@ -126,10 +148,9 @@ body {
     font-size: 24px;
 }
 
-/* CORRECT CLASS */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Mobile perfect */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
@@ -157,7 +178,7 @@ body {
     z-index: 9999;
     justify-content: center;
     align-items: center;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.9);
 }
 
 .lightbox img {
@@ -198,10 +219,10 @@ body {
     transform: scale(1.1);
 }
 
-.call { background: rgba(80,80,80,0.6); }
-.whatsapp { background: rgba(37,211,102,0.9); }
-.maps { background: rgba(212,175,55,0.9); color:#000; }
-.book { background: rgba(20,20,20,0.8); border: 1px solid #d4af37; }
+.call { background: rgba(80,80,80,0.7); }
+.whatsapp { background: rgba(37,211,102,0.95); }
+.maps { background: rgba(212,175,55,0.95); color:#000; }
+.book { background: rgba(20,20,20,0.9); border: 1px solid #d4af37; }
 
 /* =========================
    FOOTER
@@ -215,16 +236,15 @@ footer {
 }
 
 /* =========================
-   ANIMATION
+   RESPONSIVE (Desktop Upgrade)
 ========================= */
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+@media (min-width: 768px) {
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
