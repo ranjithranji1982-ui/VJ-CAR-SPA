@@ -1,268 +1,271 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background:#0a0a0a;
-color:#fff;
-overflow-x:hidden;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #000000, #0d0d0d);
+    color: #fff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* HERO */
+/* =========================
+   GLASS EFFECT BASE
+========================= */
 
-.hero{
-background:linear-gradient(135deg,#000,#111,#000);
-padding:70px 20px;
-text-align:center;
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
-.logo{
-width:120px;
-margin-bottom:15px;
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+    padding: 20px 0;
 }
 
-.hero h1{
-font-size:28px;
-letter-spacing:2px;
+.logo {
+    width: 110px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.6));
 }
 
-.hero p{
-color:#d4af37;
-margin-top:8px;
-font-size:14px;
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 40px 15px;
+    animation: fadeUp 1s ease forwards;
 }
 
-/* SERVICES */
-
-.services{
-padding:40px 15px;
-max-width:1200px;
-margin:auto;
-text-align:center;
+.hero h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
 }
 
-.services h2{
-margin-bottom:25px;
-font-size:22px;
+.hero p {
+    color: #d4af37;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
-.service-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    padding: 30px 15px;
 }
 
-.service-card{
-background:#111;
-border-radius:15px;
-overflow:hidden;
-text-decoration:none;
-color:#d4af37;
-transition:.3s;
+.services h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    animation: fadeUp 1s ease forwards;
 }
 
-.service-card img{
-width:100%;
-height:160px;
-object-fit:cover;
-display:block;
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
-.service-card span{
-display:block;
-padding:12px;
-font-size:14px;
+.service-card {
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    color: #d4af37;
+    transition: 0.4s ease;
+    animation: fadeUp 1s ease forwards;
 }
 
-.service-card:hover{
-transform:translateY(-5px);
-box-shadow:0 5px 20px rgba(212,175,55,0.3);
+.service-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 
-/* REVIEW BUTTON */
-
-.review-section{
-text-align:center;
-padding:30px 0;
+.service-card span {
+    display: block;
+    padding: 14px;
+    font-size: 14px;
 }
 
-.review-btn{
-padding:10px 22px;
-border:2px solid #d4af37;
-color:#d4af37;
-text-decoration:none;
-border-radius:30px;
-transition:.3s;
+.service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 40px rgba(212,175,55,0.4);
 }
 
-.review-btn:hover{
-background:#d4af37;
-color:#000;
+/* Apply Glass Effect */
+.service-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
 }
 
-/* FLOATING BUTTONS */
+/* =========================
+   REVIEW BUTTON
+========================= */
 
-.floating-buttons{
-position:fixed;
-bottom:20px;
-right:15px;
-display:flex;
-flex-direction:column;
-gap:12px;
-z-index:999;
+.review-btn {
+    display: inline-block;
+    margin: 40px auto;
+    padding: 14px 30px;
+    border-radius: 30px;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    text-decoration: none;
+    transition: 0.4s ease;
 }
 
-.float-btn{
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px;
-color:#fff;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.5);
-transition:.3s;
+.review-btn:hover {
+    background: #d4af37;
+    color: #000;
+    box-shadow: 0 0 20px #d4af37;
 }
 
-.float-btn:hover{
-transform:scale(1.1);
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+    padding: 30px 15px;
 }
 
-.call{background:#333;}
-.whatsapp{background:#25D366;}
-.map{background:#d4af37;color:#000;}
-.book{background:#111;border:2px solid #d4af37;color:#d4af37;}
-
-/* FOOTER */
-
-.footer{
-text-align:center;
-padding:20px;
-font-size:13px;
-background:#111;
-margin-top:30px;
+.gallery-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
-/* GALLERY PAGE */
-
-.gallery-section{
-padding:30px 15px;
-max-width:1200px;
-margin:auto;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
 }
 
-.gallery-section h2{
-text-align:center;
-margin-bottom:20px;
+.gallery img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.4s ease;
 }
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
-gap:12px;
+.gallery img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(212,175,55,0.5);
 }
 
-.gallery-grid img{
-width:100%;
-height:140px;
-object-fit:cover;
-border-radius:12px;
-display:block;
-transition:.3s;
-}
-
-.gallery-grid img:hover{
-transform:scale(1.05);
-}
-/* LIGHTBOX FULL SCREEN FIX */
+/* =========================
+   LIGHTBOX POPUP
+========================= */
 
 .lightbox {
     display: none;
     position: fixed;
+    inset: 0;
     z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.2);
 }
 
 .lightbox img {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 85%;
     object-fit: contain;
-    border-radius: 12px;
-}
-/* ===== SMOOTH GLOBAL TRANSITIONS ===== */
-* {
-    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
+    animation: popupZoom 0.4s ease;
 }
 
-/* ===== HERO FADE IN ===== */
-.hero {
-    animation: fadeInHero 1.2s ease forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInHero {
+@keyframes popupZoom {
     from {
+        transform: scale(0.85);
         opacity: 0;
-        transform: translateY(30px);
     }
     to {
+        transform: scale(1);
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
-/* ===== SERVICE CARD ANIMATION ===== */
-.service-card {
-    transform: translateY(40px);
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
+/* =========================
+   FLOATING BUTTONS
+========================= */
+
+.floating-buttons {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
 }
 
-.service-card:nth-child(1) { animation-delay: 0.1s; }
-.service-card:nth-child(2) { animation-delay: 0.2s; }
-.service-card:nth-child(3) { animation-delay: 0.3s; }
-.service-card:nth-child(4) { animation-delay: 0.4s; }
-.service-card:nth-child(5) { animation-delay: 0.5s; }
+.float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    transition: 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.float-btn:hover {
+    transform: scale(1.15);
+}
+
+.call { background: rgba(80,80,80,0.6); }
+.whatsapp { background: rgba(37,211,102,0.9); }
+.maps { background: rgba(212,175,55,0.9); color:#000; }
+.book { background: rgba(20,20,20,0.8); border: 1px solid #d4af37; }
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
 
 @keyframes fadeUp {
-    to {
-        transform: translateY(0);
-        opacity: 1;
+    from {
+        opacity: 0;
+        transform: translateY(40px);
     }
-}
-
-/* ===== CARD HOVER EFFECT ===== */
-.service-card:hover {
-    transform: translateY(-8px) scale(1.03);
-}
-
-/* ===== GALLERY IMAGE HOVER ===== */
-.gallery img {
-    border-radius: 15px;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* ===== FLOATING BUTTON ANIMATION ===== */
-.floating-btn {
-    animation: floatBtn 2.5s ease-in-out infinite;
-}
-
-@keyframes floatBtn {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0); }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
