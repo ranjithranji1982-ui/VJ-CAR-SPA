@@ -200,3 +200,69 @@ transform:scale(1.05);
     object-fit: contain;
     border-radius: 12px;
 }
+/* ===== SMOOTH GLOBAL TRANSITIONS ===== */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* ===== HERO FADE IN ===== */
+.hero {
+    animation: fadeInHero 1.2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SERVICE CARD ANIMATION ===== */
+.service-card {
+    transform: translateY(40px);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ===== CARD HOVER EFFECT ===== */
+.service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* ===== GALLERY IMAGE HOVER ===== */
+.gallery img {
+    border-radius: 15px;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== FLOATING BUTTON ANIMATION ===== */
+.floating-btn {
+    animation: floatBtn 2.5s ease-in-out infinite;
+}
+
+@keyframes floatBtn {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
