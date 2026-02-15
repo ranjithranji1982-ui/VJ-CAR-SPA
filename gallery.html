@@ -8,43 +8,86 @@
 <meta name="description" content="Premium car detailing gallery of VJ CAR SPA in Trichy.">
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<h2 class="gallery-title">Our Detailing Works</h2>
+<h2 class="gallery-title">Premium Gallery</h2>
+
+
+<!-- ================= PHOTOS SECTION ================= -->
+
+<h3 class="section-title">📸 Photos</h3>
 
 <section class="gallery-section">
 
-    <div class="gallery-grid">
+<div class="gallery-grid">
 
-        <img src="gallery/image1.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image2.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image3.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image4.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image5.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image6.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image7.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image8.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image9.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image10.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image11.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image12.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image13.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image14.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image15.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image16.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image17.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image18.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image19.png" onclick="openLightbox(this.src)">
-        <img src="gallery/image20.png" onclick="openLightbox(this.src)">
+<img src="gallery/image1.png" onclick="openLightbox(this.src)">
+<img src="gallery/image2.png" onclick="openLightbox(this.src)">
+<img src="gallery/image3.png" onclick="openLightbox(this.src)">
+<img src="gallery/image4.png" onclick="openLightbox(this.src)">
+<img src="gallery/image5.png" onclick="openLightbox(this.src)">
+<img src="gallery/image6.png" onclick="openLightbox(this.src)">
+<img src="gallery/image7.png" onclick="openLightbox(this.src)">
+<img src="gallery/image8.png" onclick="openLightbox(this.src)">
+<img src="gallery/image9.png" onclick="openLightbox(this.src)">
+<img src="gallery/image10.png" onclick="openLightbox(this.src)">
+<img src="gallery/image11.png" onclick="openLightbox(this.src)">
+<img src="gallery/image12.png" onclick="openLightbox(this.src)">
+<img src="gallery/image13.png" onclick="openLightbox(this.src)">
+<img src="gallery/image14.png" onclick="openLightbox(this.src)">
+<img src="gallery/image15.png" onclick="openLightbox(this.src)">
+<img src="gallery/image16.png" onclick="openLightbox(this.src)">
+<img src="gallery/image17.png" onclick="openLightbox(this.src)">
+<img src="gallery/image18.png" onclick="openLightbox(this.src)">
+<img src="gallery/image19.png" onclick="openLightbox(this.src)">
+<img src="gallery/image20.png" onclick="openLightbox(this.src)">
 
-    </div>
+</div>
+
 </section>
 
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img">
+
+
+<!-- ================= VIDEOS SECTION ================= -->
+
+<h3 class="section-title">🎥 Videos</h3>
+
+<section class="gallery-section">
+
+<div class="gallery-grid">
+
+<video onclick="openVideo('videos/fullwash.mp4')">
+<source src="videos/fullwash.mp4" type="video/mp4">
+</video>
+
 </div>
+
+</section>
+
+
+
+<!-- ================= IMAGE LIGHTBOX ================= -->
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+
+<img id="lightbox-img">
+
+</div>
+
+
+
+<!-- ================= VIDEO LIGHTBOX ================= -->
+
+<div id="video-lightbox" class="lightbox" onclick="closeVideo()">
+
+<video id="lightbox-video" controls autoplay></video>
+
+</div>
+
+
 
 <script src="script.js"></script>
 
