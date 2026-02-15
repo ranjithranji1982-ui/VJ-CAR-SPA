@@ -63,7 +63,7 @@ videoPopupOpen=false;
 
 
 
-/* BACK BUTTON SUPPORT */
+/* BACK BUTTON */
 
 window.addEventListener("popstate",function(){
 
@@ -82,17 +82,9 @@ closeLightbox();
 
 
 
-/* ================= AUTO LOAD FROM GITHUB ================= */
+/* AUTO LOAD IMAGES */
 
-/* IMPORTANT: change username and repo */
-
-const username="ranjithranji1982-ui";
-const repo="VJ-CAR-SPA";
-
-
-/* LOAD IMAGES */
-
-fetch(`https://api.github.com/repos/${username}/${repo}/contents/gallery`)
+fetch("https://api.github.com/repos/ranjithranji1982-ui/VJ-CAR-SPA/contents/gallery")
 .then(res=>res.json())
 .then(files=>{
 
@@ -107,9 +99,7 @@ const img=document.createElement("img");
 img.src=file.download_url;
 
 img.onclick=function(){
-
 openLightbox(this.src);
-
 };
 
 gallery.appendChild(img);
@@ -122,9 +112,9 @@ gallery.appendChild(img);
 
 
 
-/* LOAD VIDEOS */
+/* AUTO LOAD VIDEOS */
 
-fetch(`https://api.github.com/repos/${username}/${repo}/contents/videos`)
+fetch("https://api.github.com/repos/ranjithranji1982-ui/VJ-CAR-SPA/contents/videos")
 .then(res=>res.json())
 .then(files=>{
 
@@ -132,20 +122,17 @@ const gallery=document.getElementById("video-gallery");
 
 files.forEach(file=>{
 
-if(file.name.match(/\.(mp4|webm|ogg)$/i)){
+if(file.name.match(/\.(mp4)$/i)){
 
 const video=document.createElement("video");
 
 video.onclick=function(){
-
 openVideo(file.download_url);
-
 };
 
 const source=document.createElement("source");
 
 source.src=file.download_url;
-source.type="video/mp4";
 
 video.appendChild(source);
 
