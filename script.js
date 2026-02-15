@@ -2,80 +2,145 @@ let popupOpen = false;
 let videoPopupOpen = false;
 
 
-/* ================= IMAGE LIGHTBOX ================= */
+/* IMAGE LIGHTBOX */
 
-function openLightbox(src) {
+function openLightbox(src){
 
-    const lightbox = document.getElementById("lightbox");
-    const img = document.getElementById("lightbox-img");
+const lightbox=document.getElementById("lightbox");
+const img=document.getElementById("lightbox-img");
 
-    img.src = src;
-    lightbox.style.display = "flex";
-    document.body.style.overflow = "hidden";
+img.src=src;
+lightbox.style.display="flex";
 
-    popupOpen = true;
+popupOpen=true;
 
-    // Add history state
-    history.pushState({ popup: "image" }, "");
+history.pushState({popup:"image"},"");
+
 }
 
-function closeLightbox() {
+function closeLightbox(){
 
-    const lightbox = document.getElementById("lightbox");
+document.getElementById("lightbox").style.display="none";
 
-    lightbox.style.display = "none";
-    document.body.style.overflow = "auto";
+popupOpen=false;
 
-    popupOpen = false;
 }
 
 
-/* ================= VIDEO LIGHTBOX ================= */
 
-function openVideo(src) {
+/* VIDEO LIGHTBOX */
 
-    const videoLightbox = document.getElementById("video-lightbox");
-    const video = document.getElementById("lightbox-video");
+function openVideo(src){
 
-    video.src = src;
-    videoLightbox.style.display = "flex";
-    document.body.style.overflow = "hidden";
+const lightbox=document.getElementById("video-lightbox");
+const video=document.getElementById("lightbox-video");
 
-    video.play();
+video.src=src;
+lightbox.style.display="flex";
 
-    videoPopupOpen = true;
+video.play();
 
-    // Add history state
-    history.pushState({ popup: "video" }, "");
+videoPopupOpen=true;
+
+history.pushState({popup:"video"},"");
+
 }
 
-function closeVideo() {
+function closeVideo(){
 
-    const videoLightbox = document.getElementById("video-lightbox");
-    const video = document.getElementById("lightbox-video");
+const lightbox=document.getElementById("video-lightbox");
+const video=document.getElementById("lightbox-video");
 
-    video.pause();
-    video.src = "";
+video.pause();
+video.src="";
 
-    videoLightbox.style.display = "none";
-    document.body.style.overflow = "auto";
+lightbox.style.display="none";
 
-    videoPopupOpen = false;
+videoPopupOpen=false;
+
 }
 
 
-/* ================= BACK BUTTON SUPPORT ================= */
 
-window.addEventListener("popstate", function () {
+/* BACK BUTTON */
 
-    if (videoPopupOpen) {
+window.addEventListener("popstate",function(){
 
-        closeVideo();
+if(videoPopupOpen){
 
-    } else if (popupOpen) {
+closeVideo();
 
-        closeLightbox();
+}
+else if(popupOpen){
 
-    }
+closeLightbox();
+
+}
 
 });
+
+
+
+/* ================= AUTO LOAD IMAGES ================= */
+
+const imageGallery=document.getElementById("image-gallery");
+
+if(imageGallery){
+
+for(let i=1;i<=50;i++){
+
+const img=document.createElement("img");
+
+img.src="gallery/image"+i+".png";
+
+img.onclick=function(){
+
+openLightbox(this.src);
+
+};
+
+img.onerror=function(){
+
+this.remove();
+
+};
+
+imageGallery.appendChild(img);
+
+}
+
+}
+
+
+
+/* ================= AUTO LOAD VIDEOS ================= */
+
+const videoGallery=document.getElementById("video-gallery");
+
+if(videoGallery){
+
+const videoNames=["fullwash","teflon","auto","enginebay"];
+
+videoNames.forEach(function(name){
+
+const video=document.createElement("video");
+
+video.onclick=function(){
+
+openVideo("videos/"+name+".mp4");
+
+};
+
+const source=document.createElement("source");
+
+source.src="videos/"+name+".mp4";
+
+source.type="video/mp4";
+
+video.appendChild(source);
+
+videoGallery.appendChild(video);
+
+});
+
+}
