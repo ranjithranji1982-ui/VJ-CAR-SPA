@@ -1,5 +1,5 @@
-let popupOpen = false;
-let videoPopupOpen = false;
+let popupOpen=false;
+let videoPopupOpen=false;
 
 
 /* IMAGE LIGHTBOX */
@@ -36,6 +36,7 @@ const lightbox=document.getElementById("video-lightbox");
 const video=document.getElementById("lightbox-video");
 
 video.src=src;
+
 lightbox.style.display="flex";
 
 video.play();
@@ -62,7 +63,7 @@ videoPopupOpen=false;
 
 
 
-/* BACK BUTTON */
+/* BACK BUTTON SUPPORT */
 
 window.addEventListener("popstate",function(){
 
@@ -81,17 +82,29 @@ closeLightbox();
 
 
 
-/* ================= AUTO LOAD IMAGES ================= */
+/* ================= AUTO LOAD FROM GITHUB ================= */
 
-const imageGallery=document.getElementById("image-gallery");
+/* IMPORTANT: change username and repo */
 
-if(imageGallery){
+const username="ranjithranji1982-ui";
+const repo="VJ-CAR-SPA";
 
-for(let i=1;i<=50;i++){
+
+/* LOAD IMAGES */
+
+fetch(`https://api.github.com/repos/${username}/${repo}/contents/gallery`)
+.then(res=>res.json())
+.then(files=>{
+
+const gallery=document.getElementById("image-gallery");
+
+files.forEach(file=>{
+
+if(file.name.match(/\.(jpg|jpeg|png|webp)$/i)){
 
 const img=document.createElement("img");
 
-img.src="gallery/image"+i+".png";
+img.src=file.download_url;
 
 img.onclick=function(){
 
@@ -99,48 +112,47 @@ openLightbox(this.src);
 
 };
 
-img.onerror=function(){
-
-this.remove();
-
-};
-
-imageGallery.appendChild(img);
+gallery.appendChild(img);
 
 }
 
-}
+});
+
+});
 
 
 
-/* ================= AUTO LOAD VIDEOS ================= */
+/* LOAD VIDEOS */
 
-const videoGallery=document.getElementById("video-gallery");
+fetch(`https://api.github.com/repos/${username}/${repo}/contents/videos`)
+.then(res=>res.json())
+.then(files=>{
 
-if(videoGallery){
+const gallery=document.getElementById("video-gallery");
 
-const videoNames=["fullwash","teflon","auto","enginebay"];
+files.forEach(file=>{
 
-videoNames.forEach(function(name){
+if(file.name.match(/\.(mp4|webm|ogg)$/i)){
 
 const video=document.createElement("video");
 
 video.onclick=function(){
 
-openVideo("videos/"+name+".mp4");
+openVideo(file.download_url);
 
 };
 
 const source=document.createElement("source");
 
-source.src="videos/"+name+".mp4";
-
+source.src=file.download_url;
 source.type="video/mp4";
 
 video.appendChild(source);
 
-videoGallery.appendChild(video);
+gallery.appendChild(video);
+
+}
 
 });
 
-}
+});
